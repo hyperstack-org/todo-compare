@@ -12,4 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require hyperstack-loader
 //= require_tree .
