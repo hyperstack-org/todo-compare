@@ -1,4 +1,4 @@
-class Todo < HyperComponent
+class TodoIndex < HyperComponent
   INITIAL_TODOS = [
     {
       todo: 'clean the house'
