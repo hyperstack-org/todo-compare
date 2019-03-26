@@ -16,23 +16,23 @@ describe 'Todo App' do
     end
   end
 
-  context 'Todo', js: true do
+  context 'TodoIndex', js: true do
     it "lists the todos" do
-      mount 'Todo' do
-        Todo::INITIAL_TODOS = 4.times.collect { |i| { todo: "Todo - #{i}" }}
+      mount 'TodoIndex' do
+        TodoIndex::INITIAL_TODOS = 4.times.collect { |i| { todo: "Todo - #{i}" }}
       end
       expect(page).to have_selector('.ToDoItem-Text', count: 4)
     end
     it "can add a new todo using the enter key" do
-      mount 'Todo' do
-        Todo::INITIAL_TODOS = []
+      mount 'TodoIndex' do
+        TodoIndex::INITIAL_TODOS = []
       end
       find('input').set("a new todo\n")
       expect(find('.ToDoItem-Text').text).to eq('a new todo')
     end
     it "can add a new todo using the button" do
-      mount 'Todo' do
-        Todo::INITIAL_TODOS = []
+      mount 'TodoIndex' do
+        TodoIndex::INITIAL_TODOS = []
       end
       find('input').set("a new todo")
       find('.ToDo-Add').click

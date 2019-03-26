@@ -21,7 +21,7 @@ app
 ├── hyperstack
 │   ├── components
 │   │   ├── hyper_component.rb
-│   │   ├── todo.rb
+│   │   ├── todo_index.rb
 │   │   └── todo_item.rb
 │   ├── models ...
 │   ├── operations ...
@@ -34,11 +34,13 @@ app
 └── views ...
 ```
 
-If you look you will see we have also added a `components-react-comparison` and `components-vue-comparison` directory in the Hyperstack directory.  These are ignored by the application.
-
 In addition to the `app` directory you will see the usual Rails `config` directory and `db` directories, which we can ignore as they are all setup for us with good working defaults.
 
 You will also see a `spec` directory which is where specs are placed.  Specifically there is one spec file called `todo_spec.rb`.
+
+#### Comparing to Vue and React
+
+At the top level you will find a `comparisons` directory with the Vue and React versions of the application.
 
 #### Installing and Running
 
