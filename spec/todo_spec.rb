@@ -18,24 +18,28 @@ describe 'Todo App' do
 
   context 'TodoIndex', js: true do
     it "lists the todos" do
-      mount 'TodoIndex' do
-        TodoIndex::INITIAL_TODOS = 4.times.collect { |i| { todo: "Todo - #{i}" }}
-      end
+      4.times.collect { |i| Todo.create(title: "Todo - #{i}") }
+      mount 'TodoIndex'
       expect(page).to have_selector('.ToDoItem-Text', count: 4)
     end
     it "can add a new todo using the enter key" do
-      mount 'TodoIndex' do
-        TodoIndex::INITIAL_TODOS = []
-      end
+      mount 'TodoIndex'
       find('input').set("a new todo\n")
       expect(find('.ToDoItem-Text').text).to eq('a new todo')
+      expect(Todo.count).to eq(1)
+      expect(Todo.last.title).to eq('a new todo')
     end
     it "can add a new todo using the button" do
-      mount 'TodoIndex' do
-        TodoIndex::INITIAL_TODOS = []
-      end
+      mount 'TodoIndex'
       find('input').set("a new todo")
       find('.ToDo-Add').click
+      expect(find('.ToDoItem-Text').text).to eq('a new todo')
+      expect(Todo.count).to eq(1)
+      expect(Todo.last.title).to eq('a new todo')
+    end
+    it "will show a todo added remotely" do
+      mount 'TodoIndex'
+      Todo.create(title: 'a new todo')
       expect(find('.ToDoItem-Text').text).to eq('a new todo')
     end
   end

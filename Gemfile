@@ -62,4 +62,5 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'hyper-spec', '= 1.0.alpha1.4'
+  gem 'database_cleaner'
 end
