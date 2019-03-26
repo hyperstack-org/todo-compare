@@ -5,7 +5,7 @@ This is repo contains a complete working Todo app, originally described in an ex
 I took the same app and converted it to Ruby using the [Hyperstack](https://hyperstack.org) framework.  The results are documented in a series of blog posts on Medium:
 
 + [Part I](https://medium.com/@mitch_23203/the-exact-same-app-in-hyperstack-7f281cef46ca)
-+ Part II (coming soon)
++ [Part II](https://medium.com/@mitch_23203/the-exact-same-app-in-hyperstack-part-ii-5b062074ec20)
 + Part III (coming soon)
 
 #### Structure of The Hyperstack App
