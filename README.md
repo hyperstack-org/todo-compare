@@ -47,6 +47,7 @@ At the top level you will find a `comparisons` directory with the Vue and React 
 + Make sure you have rails installed: http://installrails.com/
 + Clone this repo
 + `cd todo-compare`
++ `bundle install`
 + `bundle exec rake`  (run the specs)
 + `bundle exec foreman start`
 + visit localhost:5000
