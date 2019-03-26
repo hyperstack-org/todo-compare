@@ -45,9 +45,11 @@ At the top level you will find a `comparisons` directory with the Vue and React 
 #### Installing and Running
 
 + Make sure you have rails installed: http://installrails.com/
++ You will also need yarn installed: https://yarnpkg.com/lang/en/docs/install/
 + Clone this repo
 + `cd todo-compare`
-+ `bundle install`
++ `bundle install` (install ruby gems)
++ `yarn` (install npm packages)
 + `bundle exec rake`  (run the specs)
 + `bundle exec foreman start`
 + visit localhost:5000
