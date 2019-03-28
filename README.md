@@ -5,7 +5,7 @@ This is repo contains a complete working Todo app, originally described in an ex
 I took the same app and converted it to Ruby using the [Hyperstack](https://hyperstack.org) framework.  The results are documented in a series of blog posts on Medium:
 
 + [Part I](https://medium.com/@mitch_23203/the-exact-same-app-in-hyperstack-7f281cef46ca)
-+ Part II (coming soon)
++ [Part II](https://medium.com/@mitch_23203/the-exact-same-app-in-hyperstack-part-ii-5b062074ec20)
 + Part III (coming soon)
 
 #### Structure of The Hyperstack App
@@ -50,6 +50,9 @@ At the top level you will find a `comparisons` directory with the Vue and React 
 + `bundle exec rake`  (run the specs)
 + `bundle exec foreman start`
 + visit localhost:5000
+
+FYI if you want to run the specs in Chrome so you can watch the action:
++ `DRIVER=chrome bundle exec rake`
 
 #### Playing Around
 
