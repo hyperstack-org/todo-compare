@@ -1,7 +1,7 @@
 class TodoIndex < HyperComponent
 
   def create_new_todo_item
-    Todo.create(title: @todo)
+    Todo.create(title: @title)
     @title = nil
   end
 
