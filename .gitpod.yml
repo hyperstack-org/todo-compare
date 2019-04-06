@@ -1,12 +1,14 @@
 tasks:
   - init:
       bundle install
+      yarn
+      bundle exec rake db:reset
   - command:
       bundle exec rake db:create &&
       bundle exec rake db:migrate
 ports:
-- port: 5000
-- port: 3000
-- port: 9514
-- port: 9515
-- port: 25222
+  - port: 5000
+  - port: 3000
+  - port: 9514
+  - port: 9515
+  - port: 25222
