@@ -20,3 +20,24 @@ module Hyperstack
     )
   end
 end if Rails.env.development?
+
+module ReactiveRecord
+  class Broadcast
+    def self.send_to_server(operation, data)
+      salt = SecureRandom.hex
+      authorization = Hyperstack.authorization(salt, data[:channel], data[:broadcast_id])
+      raise 'no server running' unless Hyperstack::Connection.root_path
+      root_path = Hyperstack::Connection.root_path
+      if root_path =~ /^https:\/\/(\d+)-[a-f0-9\-]+\.[^\/]+\/(.+)\/$/
+        root_path = "http://127.0.0.1:#{$1}/#{$2}"
+      end
+      SendPacket.remote(
+        root_path,
+        data,
+        operation: operation,
+        salt: salt,
+        authorization: authorization
+      ).tap { |p| raise p.error if p.rejected? }
+    end
+  end
+end
