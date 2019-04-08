@@ -3,6 +3,7 @@
 Hyperstack.configuration do |config|
   config.transport = :action_cable
   config.prerendering = :off # or :on
+  config.hotloader_ping = 10 # seconds
   config.cancel_import 'react/react-source-browser' # bring your own React and ReactRouter via Yarn/Webpacker
   config.import 'hyperstack/component/jquery', client_only: true # remove this line if you don't need jquery
   config.import 'hyperstack/hotloader', client_only: true if Rails.env.development?

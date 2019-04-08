@@ -17,7 +17,7 @@ module Hyperstack
             protocol = `window.location.protocol` == 'https:' ? 'wss:' : 'ws:'
             ws = `new WebSocket(#{protocol} + '//' + #{ws_url})`
             `#{ws}.onmessage = #{lambda { |e| reload(e) }}`
-            `setInterval(function() { #{ws}.send('') }, #{@ping * 1000})` if @ping
+            `setInterval(function() { #{ws}.send('') }, 10000)` if @ping
         end
     end
 end
