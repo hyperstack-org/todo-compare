@@ -1,13 +1,22 @@
 tasks:
   - init:
-      bundle install && 
+      bundle install &&
       yarn &&
-      bundle exec rake db:reset
+      bundle exec rake db:reset &&
+      touch /workspace/.build-done
+    command: bundle exec rails s -b 0.0.0.0
   - command:
-      bundle exec foreman start
+      while [ ! -f /workspace/.build-done ]; do sleep 1; done;
+      bundle exec hyperstack-hotloader -p 25222 -d app/hyperstack/
+    openMode: split-right
 ports:
   - port: 5000
+    onOpen: ignore
   - port: 3000
+    onOpen: open-preview
   - port: 9514
+    onOpen: ignore
   - port: 9515
+    onOpen: ignore
   - port: 25222
+    onOpen: ignore
